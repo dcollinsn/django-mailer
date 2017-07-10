@@ -37,8 +37,9 @@ def get_priority(priority):
 
 # replacement for django.core.mail.send_mail
 
-def send_mail(subject, message, from_email, recipient_list, priority=None,
-              fail_silently=False, auth_user=None, auth_password=None):
+def send_mail(subject, message, from_email, recipient_list, headers=None,
+              priority=None, fail_silently=False, auth_user=None,
+              auth_password=None):
     from django.utils.encoding import force_text
     from mailer.models import make_message
 
@@ -51,6 +52,7 @@ def send_mail(subject, message, from_email, recipient_list, priority=None,
                  body=message,
                  from_email=from_email,
                  to=recipient_list,
+                 headers=headers,
                  priority=priority).save()
     return 1
 
