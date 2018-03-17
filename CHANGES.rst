@@ -4,6 +4,16 @@ Change log
 Unreleased
 ----------
 
+1.2.4
+-----
+
+* Django 2.0 support.
+
+1.2.3
+-----
+
+* Fixed crasher with models ``__str__``
+
 1.2.2
 -----
 
